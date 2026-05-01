@@ -5,6 +5,7 @@ import type { Group } from '../types';
 import CardItem from './CardItem.vue';
 import CreateEditCard from './CreateEditCard.vue';
 import CreateEditGroup from './CreateEditGroup.vue';
+import ConfirmDialog from './ConfirmDialog.vue';
 import { useKanban } from '../composables/useKanban';
 
 const props = defineProps<{
@@ -15,6 +16,10 @@ const { removeGroup, editGroup, addCardToGroup, removeCard } = useKanban();
 
 const isCardDialogOpen = ref(false);
 const isEditGroupDialogOpen = ref(false);
+
+const isConfirmDeleteGroupOpen = ref(false);
+const isConfirmDeleteCardOpen = ref(false);
+const cardIdToDelete = ref<number | null>(null);
 
 const openAddCardDialog = () => {
     isCardDialogOpen.value = true;
@@ -38,10 +43,26 @@ const handleSaveGroup = (payload: { id?: number, title: string }) => {
     isEditGroupDialogOpen.value = false;
 };
 
-const handleDeleteGroup = () => {
-    if (confirm(`Deseja deletar permanentemente a lista "${props.group.title}" e todos os seus cartões?`)) {
-        removeGroup(props.group.id);
+const handleDeleteGroupClick = () => {
+    isConfirmDeleteGroupOpen.value = true;
+};
+
+const execDeleteGroup = () => {
+    removeGroup(props.group.id);
+    isConfirmDeleteGroupOpen.value = false;
+};
+
+const handleCardRemoveRequest = (cardId: number) => {
+    cardIdToDelete.value = cardId;
+    isConfirmDeleteCardOpen.value = true;
+};
+
+const execDeleteCard = () => {
+    if (cardIdToDelete.value !== null) {
+        removeCard(props.group.id, cardIdToDelete.value);
     }
+    cardIdToDelete.value = null;
+    isConfirmDeleteCardOpen.value = false;
 };
 </script>
 
@@ -54,7 +75,7 @@ const handleDeleteGroup = () => {
         <div class="text-xs font-bold bg-white border border-gray-200 text-gray-600 px-2.5 py-0.5 rounded-full shadow-sm">
           {{ group.cards.length }}
         </div>
-        <button @click.stop="handleDeleteGroup" class="opacity-0 group-hover/header:opacity-100 text-danger hover:bg-red-100 transition-all cursor-pointer font-bold px-2 py-0.5 rounded-md" title="Deletar lista">✕</button>
+        <button @click.stop="handleDeleteGroupClick" class="opacity-0 group-hover/header:opacity-100 text-danger hover:bg-red-100 transition-all cursor-pointer font-bold px-2 py-0.5 rounded-md" title="Deletar lista">✕</button>
       </div>
     </div>
 
@@ -71,7 +92,7 @@ const handleDeleteGroup = () => {
           :card="element" 
           :groupId="group.id"
           class="cursor-grab active:cursor-grabbing hover:ring-2 ring-primary ring-opacity-30 transition-shadow"
-          @remove="removeCard(group.id, element.id)"
+          @remove="handleCardRemoveRequest(element.id)"
         />
       </template>
     </draggable>
@@ -94,6 +115,24 @@ const handleDeleteGroup = () => {
         :group="group"
         @close="isEditGroupDialogOpen = false"
         @save="handleSaveGroup"
+    />
+
+    <ConfirmDialog 
+        :isOpen="isConfirmDeleteGroupOpen"
+        title="Excluir Lista"
+        :message="`Deseja deletar permanentemente a lista '${group.title}' e todas as suas tarefas?`"
+        confirmText="Excluir"
+        @cancel="isConfirmDeleteGroupOpen = false"
+        @confirm="execDeleteGroup"
+    />
+
+    <ConfirmDialog 
+        :isOpen="isConfirmDeleteCardOpen"
+        title="Excluir Tarefa"
+        message="Tem certeza que deseja deletar permanentemente esta tarefa?"
+        confirmText="Excluir"
+        @cancel="isConfirmDeleteCardOpen = false"
+        @confirm="execDeleteCard"
     />
   </div>
 </template>
