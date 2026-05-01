@@ -16,6 +16,7 @@ O projeto Kandumb (Kanban web) deve seguir as seguintes diretrizes técnicas:
 ## Padrões de Código
 - Uso de tipagem através de Interfaces/Tipos exportados.
 - Aproveitamento das capacidades reativas (reactive, ref) do Vue e separação de lógica via composables.
+- **Service Layer**: A manipulação direta de dados e interações com persistência (`localStorage`) deve ser isolada em funções exportadas independentemente (arquitetura funcional) dentro da pasta `/services`.
 
 ## Padrões de Layout e Estilização
 - **Minimalismo Base**: O fundo da aplicação deve ser branco (`#FAFAFA`) com tipografia preta (`#0a0a0a`).

@@ -5,6 +5,7 @@ O projeto adota uma arquitetura clássica baseada em componentes Vue.js.
 ## Estrutura de Diretórios
 - `/src/components`: Componentes visuais isolados e modulares (ex: `Card`, `Group`, `Board`).
 - `/src/composables`: Lógicas reaproveitáveis usando a Composition API (ex: `useKanban.ts`, etc).
+- `/src/services`: Camada de serviços exportando funções únicas e separadas p/ operações granulares e persistência.
 - `/src/types`: Interfaces do TypeScript correspondentes às entidades.
 - `/src/assets`: Arquivos estáticos e globais (ex: CSS injetado pelo Tailwind).
 
