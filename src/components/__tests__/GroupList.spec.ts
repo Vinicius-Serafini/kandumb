@@ -20,4 +20,15 @@ describe('GroupList.vue', () => {
         // Assert deepest card iteration display
         expect(screen.getByText('Card A')).toBeInTheDocument(); 
     });
+
+    it('mounts draggable area capable of dealing with empty cards array', () => {
+        const mockEmptyGroup = { id: 2, title: 'Empty Area', cards: [] };
+        const { container } = render(GroupList, {
+            props: { group: mockEmptyGroup }
+        });
+        
+        // Verifica se a zona the drag and drop persiste no DOM para receber tasks apesar de vazia (min-h)
+        const dropZone = container.querySelector('.overflow-y-auto');
+        expect(dropZone).toBeInTheDocument();
+    });
 });

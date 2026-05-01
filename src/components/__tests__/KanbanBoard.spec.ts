@@ -15,4 +15,14 @@ describe('KanbanBoard.vue', () => {
         expect(screen.getByText('Q&A Section')).toBeInTheDocument();
         expect(screen.getByText(/\+ Nova Lista/i)).toBeInTheDocument();
     });
+
+    it('wraps columns natively inside VueDraggable preserving interactivity', () => {
+        const { container } = render(KanbanBoard, {
+            props: { groups: [{ id: 1, title: 'Column', cards: [] }] }
+        });
+        
+        // Verifica se o container interno encarregado do drag & drop foi inicializado corretamente
+        const draggableWrapper = container.querySelectorAll('.items-start');
+        expect(draggableWrapper.length).toBeGreaterThan(0);
+    });
 });
