@@ -24,7 +24,7 @@ watch(() => props.isOpen, (newVal) => {
       title.value = '';
     }
   }
-});
+}, { immediate: true });
 
 const handleSave = () => {
     if (title.value.trim()) {

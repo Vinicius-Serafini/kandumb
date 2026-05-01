@@ -8,6 +8,7 @@ O projeto adota uma arquitetura clássica baseada em componentes Vue.js.
 - `/src/services`: Camada de serviços exportando funções únicas e separadas p/ operações granulares e persistência.
 - `/src/types`: Interfaces do TypeScript correspondentes às entidades.
 - `/src/assets`: Arquivos estáticos e globais (ex: CSS injetado pelo Tailwind).
+- `**/__tests__/`: Sub-pastas declarativas espalhadas ao lado dos seus arquivos base (components, modules, services) mantendo o ecossistema de testes perto de suas contrapartes.
 
 ## Entidades de Domínio
 

@@ -12,7 +12,7 @@ export const getGroupById = (id: number): Group | undefined => {
 export const createGroup = (title: string): Group => {
   const groups = getStorageData();
   const newGroup: Group = {
-    id: Date.now(),
+    id: Date.now() + Math.floor(Math.random() * 10000),
     title: title.trim(),
     cards: []
   };

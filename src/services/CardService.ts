@@ -7,7 +7,7 @@ export const createCard = (groupId: number, title: string, description: string):
   if (!group) return null;
 
   const newCard: Card = {
-    id: Date.now(),
+    id: Date.now() + Math.floor(Math.random() * 10000),
     title: title.trim(),
     description: description.trim()
   };

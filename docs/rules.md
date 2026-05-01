@@ -14,9 +14,12 @@ O projeto Kandumb (Kanban web) deve seguir as seguintes diretrizes técnicas:
 - Todos os dados deverão ser mantidos no navegador, utilizando o `localStorage` do browser.
 
 ## Padrões de Código
+## Padrões de Código
 - Uso de tipagem através de Interfaces/Tipos exportados.
 - Aproveitamento das capacidades reativas (reactive, ref) do Vue e separação de lógica via composables.
 - **Service Layer**: A manipulação direta de dados e interações com persistência (`localStorage`) deve ser isolada em funções exportadas independentemente (arquitetura funcional) dentro da pasta `/services`.
+- **Testes Unitários Obrigatórios**: Qualquer nova lógica implementada deve possuir um teste atrelado (garantindo robustez).
+- **Testing Library First**: A testagem de frontend deverá sempre privilegiar simulação de comportamento visual e de interações (ex: "clicar e ver resultado na tela") usando pacotes oficiais do `@testing-library/vue` invés de mockar instâncias abstratas do Vue.
 
 ## Padrões de Layout e Estilização
 - **Minimalismo Base**: O fundo da aplicação deve ser branco (`#FAFAFA`) com tipografia preta (`#0a0a0a`).
