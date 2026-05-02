@@ -1,6 +1,6 @@
-# Constituição do KANDUMB (Kanban Web)
+# Constituição do Kandummy (Kanban Web)
 
-Este é o arquivo raiz e norteador principal do projeto **Kandumb** (quadro Kanban focado em frontend). Ele atua como guia primário, apontando para todas as especificações essenciais do portal.
+Este é o arquivo raiz e norteador principal do projeto **Kandummy** (quadro Kanban focado em frontend). Ele atua como guia primário, apontando para todas as especificações essenciais do portal.
 
 ## Documentos de Referência
 

@@ -5,6 +5,6 @@ import AppHeader from '../AppHeader.vue';
 describe('AppHeader.vue', () => {
     it('renders heading text properly', () => {
         render(AppHeader);
-        expect(screen.getByText(/kandumb/i)).toBeInTheDocument();
+        expect(screen.getByText(/Kandummy/i)).toBeInTheDocument();
     });
 });

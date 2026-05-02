@@ -1,6 +1,6 @@
 # Regras Técnicas do Projeto
 
-O projeto Kandumb (Kanban web) deve seguir as seguintes diretrizes técnicas:
+O projeto Kandummy (Kanban web) deve seguir as seguintes diretrizes técnicas:
 
 ## Tecnologias e Frameworks
 - **Vue 3**: Utilizar a versão mais recente com a Composition API (`<script setup>`).

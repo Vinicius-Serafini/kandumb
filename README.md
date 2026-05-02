@@ -1,7 +1,7 @@
-# Kandumb 📋
+# Kandummy 📋
 
 ## 📌 Descrição do Projeto
-Kandumb é um moderno quadro Kanban projetado para ser ultra-rápido, limpo e executado primariamente do lado do cliente (client-side). Construído com uma filosofia minimalista visual, este web app permite o completo gerenciamento de tarefas através de listas e cartões arrastáveis e editáveis, mantendo tudo sincronizado e persistido instantaneamente sem a necessidade de chamadas de rede ou Back-ends, usando o `localStorage` nativo do navegador.
+Kandummy é um moderno quadro Kanban projetado para ser ultra-rápido, limpo e executado primariamente do lado do cliente (client-side). Construído com uma filosofia minimalista visual, este web app permite o completo gerenciamento de tarefas através de listas e cartões arrastáveis e editáveis, mantendo tudo sincronizado e persistido instantaneamente sem a necessidade de chamadas de rede ou Back-ends, usando o `localStorage` nativo do navegador.
 
 ## 🛠️ Stack de Tecnologias
 - **Engine Frontend**: Vue 3 (Composition API completa)
@@ -31,7 +31,7 @@ Siga as etapas para clonar e rodar no seu ambiente de desenvolvimento perfeitame
    ```
 
 ## 🏗️ Arquitetura
-A infraestrutura do Kandumb orbita ao redor da estabilidade reativa, priorizando o isolamento das ações:
+A infraestrutura do Kandummy orbita ao redor da estabilidade reativa, priorizando o isolamento das ações:
 - **Base Components**: Interfaces mínimas isoladas responsáveis apenas pela UX.
 - **Proxy do State**: O hook central `useKanban` orquestra a comunicação entre visual e dado.
 - **Service Layer Funcional**: Toda leitura, criação e gravação de memória são encarregadas para funções autônomas e sem lado de efeitos no repositório `services`.
@@ -39,11 +39,11 @@ A infraestrutura do Kandumb orbita ao redor da estabilidade reativa, priorizando
 > 👉 Para compreender com minúcia as entidades de domínio (`Card` / `Group`) referencie a nossa bíblia arquitetural: **[Documento Oficial de Arquitetura](./docs/architecture.md)**.
 
 ## ⚖️ A Constituição (`constitution.md`)
-Todo ecossistema e escopo vivo de regras ativas deste projeto está pautado pela **[Constituição Kandumb](./docs/constitution.md)**, e seus desmembramentos e resoluções no `rules.md`.
+Todo ecossistema e escopo vivo de regras ativas deste projeto está pautado pela **[Constituição Kandummy](./docs/constitution.md)**, e seus desmembramentos e resoluções no `rules.md`.
 Use o _Constitution_ para balizar futuros desenvolvimentos. Ele atua como fonte imutável sobre os padrões visuais (como o botão Action sem fundo que você encontra na aplicação), priorizando que todos sigam os rigoros de tipagem visual estipulados na concepção inicial.
 
 ## 🤖 Operado e Criado Via Code-AI
-O Kandumb foi inteiramente arquitetado através de fluxos de Pair-Programming entre o Desenvolvedor Humano e eu (A **Antigravity AI** do *Google Deepmind*).
+O Kandummy foi inteiramente arquitetado através de fluxos de Pair-Programming entre o Desenvolvedor Humano e eu (A **Antigravity AI** do *Google Deepmind*).
 A IA foi utilizada de forma transversal no projeto ativamente nos módulos de:
 1. **Composição Estrutural**: Elaboração e deploy imediato do código de templates do Vite, Tailwind, e criação de tipagens de software.
 2. **Consultoria Técnica e TDD**: Transição de Arquitetura Mista reativa para padrão Service Layer com cobertura pesada de Testes usando Testing-Library focada no DOM de usuário.

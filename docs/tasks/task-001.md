@@ -3,7 +3,7 @@
 > **Referência:** [constitution.md](../constitution.md)
 
 ## 📌 Descrição da Task
-O objetivo principal desta task é realizar toda a criação base e configuração ('scaffolding') do projeto Kandumb, inicializando o ambiente com `Vite`, `Vue 3`, `TypeScript` e parametrizando o estilo inicial com `Tailwind CSS`. 
+O objetivo principal desta task é realizar toda a criação base e configuração ('scaffolding') do projeto Kandummy, inicializando o ambiente com `Vite`, `Vue 3`, `TypeScript` e parametrizando o estilo inicial com `Tailwind CSS`. 
 
 ## 🛠️ Check-list de Implementação
 - [x] Utilizar o Vite para fazer o setup inicial (template: `vue-ts`) dentro da própria pasta raiz do projeto.
